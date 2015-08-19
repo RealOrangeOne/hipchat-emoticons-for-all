@@ -1,10 +1,10 @@
 {
-  "title": "injection testing",
-  "name": "injectiontesting",
-  "version": "0.0.1",
-  "description": "A basic add-on",
+  "title": "Hipchat Emoticons for all",
+  "name": "Hipchat emoticons for all",
+  "version": "ALPHA",
+  "description": "Use Hipchat emoticons on other sites",
   "main": "index.js",
-  "author": "Jake Howard",
+  "author": "TheOrangeOne",
   "engines": {
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"

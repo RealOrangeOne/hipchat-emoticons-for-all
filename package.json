@@ -1,0 +1,43 @@
+{
+  "name": "Hipchat Emoticons for all",
+  "version": "ALPHA",
+  "description": "Use hipchat emoticons on other sites",
+  "main": "src/index.js",
+  "scripts": {
+    "create-dirs": "mkdir -p build/assets build/lib",
+    "build-extensions": "",
+    "build-firefox": "",
+    "build-chrome": "",
+    "build-js": "browserify -t reactify src/index.js -o build/index.js",
+    "copy-firefox": "",
+    "copy-chrome": "",
+    "build": "ulimit -n 512 && npm run create-dirs && npm install && npm run build-js && npm run copy-firefox && npm run copy-chrome",
+    "clean": "rm -rf build/ && rm -rf firefox/data",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all"
+  },
+  "keywords": [
+    "hipchat",
+    "emoticons"
+  ],
+  "author": "TheOrangeOne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all/issues"
+  },
+  "homepage": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all",
+  "dependencies": {
+    "browserify": "=9.0.3",
+    "ionic-sdk": "=1.0.0",
+    "less": "=2.4.0",
+    "react": "=0.13.2",
+    "react-tools": "=0.13.2",
+    "reactify": "=1.1.1"
+  },
+  "devDependencies": {
+    "jquery": "=2.1.4",
+    "jpm":"=1.0.1"
+  }
+}
