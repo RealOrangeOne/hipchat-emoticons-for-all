@@ -6,7 +6,7 @@
   "scripts": {
     "create-dirs": "mkdir -p build/assets build/lib",
     "build-extensions": "",
-    "build-firefox": "",
+    "build-firefox": "cd firefox/ && jpm xpi",
     "build-chrome": "",
     "build-js": "browserify -t reactify src/index.js -o build/index.js",
     "copy-firefox": "",
