@@ -1,4 +1,0 @@
-var decoder = {
-
-}
-exports = decoder;
