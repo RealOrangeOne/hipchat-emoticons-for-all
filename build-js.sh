@@ -1,4 +1,4 @@
-#~!/usr/bin/bash
+#!/usr/bin/bash
 
 cp -r src/* build/
 rm -rf build/injections/*
