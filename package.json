@@ -10,7 +10,7 @@
     "build-chrome": "crx pack chrome -o hipchat-emoticons-for-all.crx -p chrome/key.pem",
     "build-js": "bash build-js.sh",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
-    "distribute": "cp build/* firefox/data/ && cp build/* chrome/data/",
+    "distribute": "cp -r build/* firefox/data/ && cp -r build/* chrome/data/",
     "build": "npm run clean && npm run create-dirs && npm install && npm run build-js && npm run distribute && npm run build-data-files && npm run build-extensions",
     "clean": "rm -rf firefox/data chrome/data node_modules/"
   },
