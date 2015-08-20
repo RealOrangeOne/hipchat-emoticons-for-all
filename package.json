@@ -7,7 +7,7 @@
     "create-dirs": "mkdir -p build/assets build/lib",
     "build-extensions": "",
     "build-firefox": "cd firefox/ && jpm xpi",
-    "build-chrome": "",
+    "build-chrome": "chromium-browser --pack-extension=./ --pack-extension-key=key.pem",
     "build-js": "browserify -t reactify src/index.js -o build/index.js",
     "copy-firefox": "",
     "copy-chrome": "",
