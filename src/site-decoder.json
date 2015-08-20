@@ -1,0 +1,3 @@
+{ // Site Identifier : Injection JS
+    "*.facebook.com":"facebook.js",
+}
