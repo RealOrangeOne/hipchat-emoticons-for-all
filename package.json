@@ -1,18 +1,18 @@
 {
-  "name": "Hipchat Emoticons for all",
-  "version": "ALPHA",
+  "name": "Hipchat-Emoticons-for-all",
+  "version": "0.0.0",
   "description": "Use hipchat emoticons on other sites",
   "main": "src/index.js",
   "scripts": {
-    "create-dirs": "mkdir -p firefox/data chrome/data build/",
+    "create-dirs": "mkdir -p firefox/data chrome/data build/injections",
     "build-extensions": "npm run build-firefox && npm run build-chrome",
     "build-firefox": "cd firefox/ && jpm xpi && cd -",
     "build-chrome": "crx pack chrome -o hipchat-emoticons-for-all.crx -p chrome/key.pem",
-    "build-js": "uglifyjs-folder src -eo build && cp src/*.json build/ && rename .min.js .js build/*.min.js",
+    "build-js": "mkdir -p ./build/src/injections && for f in src/injections/*; do uglifyjs $f --compress --mangle -o build/$f; done && cp build/src/injections/* build/injections/ && rm -rf build/src",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
     "distribute": "cp build/* firefox/data/ && cp build/* chrome/data/",
     "build": "npm run clean && npm run create-dirs && npm install && npm run build-js && npm run distribute && npm run build-data-files && npm run build-extensions",
-    "clean": "rm -rf firefox/data && rm -rf chrome/data",
+    "clean": "rm -rf firefox/data chrome/data node_modules/"
   },
   "repository": {
     "type": "git",
@@ -31,11 +31,11 @@
   "dependencies": {
     "ionic-sdk": "=1.0.0",
     "less": "=2.4.0",
-    "jquery": "=2.1.4",
+    "jquery": "=2.1.4"
   },
   "devDependencies": {
     "jpm":"=1.0.1",
-    "uglifyjs-folder":"=0.2.1",
+    "uglify-js":"=2.4.24",
     "crx": "=3.0.3"
   }
 }
