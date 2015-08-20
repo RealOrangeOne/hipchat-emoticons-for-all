@@ -9,3 +9,5 @@ firefox/data
 
 # Source
 build/
+node_modules/
+npm-debug.log
