@@ -1,6 +1,10 @@
 # Chrome extension files
-key.pem
+chrome/key.pem
+chrome/data
+
 
 # Firefox extension files
+firefox/data
+
 
 # Source
