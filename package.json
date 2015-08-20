@@ -8,7 +8,7 @@
     "build-extensions": "npm run build-firefox && npm run build-chrome",
     "build-firefox": "cd firefox/ && jpm xpi && cd -",
     "build-chrome": "crx pack chrome -o hipchat-emoticons-for-all.crx -p chrome/key.pem",
-    "build-js": "uglifyjs-folder src -eo build && cp src/*.json build/",
+    "build-js": "uglifyjs-folder src -eo build && cp src/*.json build/ && rename .min.js .js build/*.min.js",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
     "distribute": "cp build/* firefox/data/ && cp build/* chrome/data/",
     "build": "npm run clean && npm run create-dirs && npm install && npm run build-js && npm run distribute && npm run build-data-files && npm run build-extensions",
