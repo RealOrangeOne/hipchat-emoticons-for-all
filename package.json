@@ -4,16 +4,15 @@
   "description": "Use hipchat emoticons on other sites",
   "main": "src/index.js",
   "scripts": {
-    "create-dirs": "mkdir -p build/assets build/lib",
-    "build-extensions": "",
+    "create-dirs": "mkdir -p firefox/data chrome/data build/",
+    "build-extensions": "npm run build-firefox && npm run build-chrome",
     "build-firefox": "cd firefox/ && jpm xpi && cd -",
-    "build-chrome": "chromium-browser --pack-extension=chrome/ --pack-extension-key=key.pem",
-    "build-js": "browserify -t reactify src/index.js -o build/index.js",
-    "build-data": "python firefox/build-package.py && python chrome/build-manifest.py",
-    "copy-firefox": "cp src/* firefox/data/",
-    "copy-chrome": "cp src/* chrome/data/",
-    "build": "ulimit -n 512 && npm run create-dirs && npm install && npm run build-js && npm run copy-firefox && npm run copy-chrome",
-    "clean": "rm -rf build/ && rm -rf firefox/data && rm -rf chrome/data",
+    "build-chrome": "crx pack chrome -o hipchat-emoticons-for-all.crx -p chrome/key.pem",
+    "build-js": "uglifyjs-folder src -eo build && cp src/*.json build/",
+    "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
+    "distribute": "cp build/* firefox/data/ && cp build/* chrome/data/",
+    "build": "npm run clean && npm run create-dirs && npm install && npm run build-js && npm run distribute && npm run build-data-files && npm run build-extensions",
+    "clean": "rm -rf firefox/data && rm -rf chrome/data",
   },
   "repository": {
     "type": "git",
@@ -30,15 +29,13 @@
   },
   "homepage": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all",
   "dependencies": {
-    "browserify": "=9.0.3",
     "ionic-sdk": "=1.0.0",
     "less": "=2.4.0",
-    "react": "=0.13.2",
-    "react-tools": "=0.13.2",
-    "reactify": "=1.1.1"
+    "jquery": "=2.1.4",
   },
   "devDependencies": {
-    "jquery": "=2.1.4",
-    "jpm":"=1.0.1"
+    "jpm":"=1.0.1",
+    "uglifyjs-folder":"=0.2.1",
+    "crx": "=3.0.3"
   }
 }
