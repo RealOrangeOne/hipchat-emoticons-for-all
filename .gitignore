@@ -1,11 +1,11 @@
 # Chrome extension files
 chrome/key.pem
 chrome/data
-*.crx
+chrome/*.crx
 
 # Firefox extension files
 firefox/data
-*.xpi
+firefox/*.xpi
 
 # Source
 build/

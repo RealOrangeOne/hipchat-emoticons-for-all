@@ -1,11 +1,12 @@
 import json
+import os
+current_dir = os.path.dirname(os.path.realpath(__file__)) + "/"
 
-
-with open("../package.json") as json_file:
+with open(current_dir + "../package.json") as json_file:
     project_package = json.load(json_file)
 
 
-with open("manifest.json") as json_file:
+with open(current_dir + "manifest.json") as json_file:
     manifest = json.load(json_file)
 
 
@@ -16,24 +17,25 @@ switcher = {
 }
 
 
-for key, value in enumerate(switcher):
+for key, value in switcher.items():
     manifest[value] = project_package[key]
 
 
-with open("data/site-decoder.json") as json_file:
-    site_decoder = json.load(json_file)
+with open(current_dir + "data/site-decoder.json") as json_file:
+    site_decoder = json.load(json_file)['sites']
 
 
 content_scripts = []
-for ident, script in enumerate(site_decoder):
+for site in site_decoder:
+    site = list(site.items())[0]
     temp = {}
-    temp['matches'] = [ident]
-    temp['js'] = ['data/lib/jquery.js', 'data/image_lookup.js', 'data/injections/' + script]
+    temp['matches'] = [site[0]]
+    temp['js'] = ['data/lib/jquery.js', 'data/image_lookup.js', 'data/injections/' + site[1]]
     content_scripts.append(temp)
 
 
 manifest['content_scripts'] = content_scripts
 
 
-with open('package.json', 'w') as file:
-    json.dump(manifest, file)
+with open(current_dir + 'manifest.json', 'w') as file:
+    json.dump(manifest, file, indent=2, sort_keys=True)

@@ -1,14 +1,18 @@
 {
-  "manifest_version": 2,
-
-  "name": "Hipchat Emoticons for all",
-  "description": "Allows use of hipchat emoticons on other websites",
-  "version": "ALPHA",
-
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*"],
-      "js": ["jquery.js", "myscript.js"]
+      "js": [
+        "data/lib/jquery.js", 
+        "data/image_lookup.js", 
+        "data/injections/facebook.js"
+      ], 
+      "matches": [
+        "*.facebook.com"
+      ]
     }
-  ],
+  ], 
+  "description": "Use hipchat emoticons on other sites", 
+  "manifest_version": 2, 
+  "name": "Hipchat-Emoticons-for-all", 
+  "version": "0.0.0"
 }
