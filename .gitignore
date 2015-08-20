@@ -1,10 +1,10 @@
 # Chrome extension files
 chrome/key.pem
 chrome/data
-
+*.crx
 
 # Firefox extension files
 firefox/data
-
+*.xpi
 
 # Source
