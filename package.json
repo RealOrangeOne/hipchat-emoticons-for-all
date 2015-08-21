@@ -11,7 +11,7 @@
     "test-firefox": "cd firefox/ && jpm run -b /usr/bin/firefox && cd -",
     "build-js": "bash build-js.sh",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
-    "distribute": "cp -r build/* firefox/data/ && cp -r build/* chrome/data/",
+    "distribute": "rm -rf firefox/data/* chrome/data/* && cp -rf build/* firefox/data/ && cp -rf build/* chrome/data/",
     "build": "npm run clean && npm run create-dirs && npm run build-js && npm run distribute && npm run build-data-files && npm run build-extensions",
     "clean": "rm -rf firefox/data chrome/data node_modules/ build/"
   },
