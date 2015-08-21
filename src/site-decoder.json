@@ -1,5 +1,6 @@
 {
     "sites": [
-        {"*.facebook.com":"facebook.js"}
+        {"*.facebook.com":"facebook.js"},
+        {"*.github.com":"github.js"}
     ]
 }
