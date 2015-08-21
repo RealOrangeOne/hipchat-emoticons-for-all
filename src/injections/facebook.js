@@ -19,3 +19,4 @@ $('._d97').on('change load', function(event){
     change_chat_tabs();
 });
 alert("Injected");
+console.log("Injected");
