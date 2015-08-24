@@ -6,7 +6,6 @@ for (var i = 0; i < sites.length; i++) {
     site = Object.keys(sites[i]);
     script = sites[i][site];
     site = '*.' + site;
-    console.log("SS: " + site + " " + script);
     pageMod.PageMod({
       include: site,
       contentScriptFile: './injections/' + script,

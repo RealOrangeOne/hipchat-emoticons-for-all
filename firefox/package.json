@@ -1,14 +1,14 @@
 {
-  "author": "TheOrangeOne",
-  "description": "Use hipchat emoticons on other sites",
+  "author": "TheOrangeOne", 
+  "description": "Use hipchat emoticons on other sites", 
   "engines": {
-    "fennec": ">=38.0a1",
+    "fennec": ">=38.0a1", 
     "firefox": ">=38.0a1"
-  },
-  "id": "Hipchat-Emoticons-for-all@jetpack",
-  "license": "MIT",
-  "main": "index.js",
-  "name": "hipchat emoticons for all",
-  "title": "Hipchat-Emoticons-for-all",
+  }, 
+  "id": "Hipchat-Emoticons-for-all@jetpack", 
+  "license": "MIT", 
+  "main": "index.js", 
+  "name": "hipchat emoticons for all", 
+  "title": "Hipchat-Emoticons-for-all", 
   "version": "0.0.0"
 }
