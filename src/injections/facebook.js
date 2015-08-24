@@ -1,17 +1,6 @@
-
-
 function change_chat_tabs() {
   console.log("Event");
-  inject_image('._d97');
-  jq('._d97').each(function(){
-    for (var i = 0; i < image_decoder.length; i++) {
-      console.log('Checking for ' + image_decoder[i][0])
-      jq(this).html(jq(this).html().replace(
-        image_decoder[i][0],
-        "<img class='emoticon' style='height: 30px; width: 30px;' src='" + image_decoder[i][1] + "'/>"
-      ));
-    }
-  });
+  inject_image('._d97', 'emoticon');
 }
 
 
@@ -33,11 +22,5 @@ jq('.fbNub').on('click', function() {  // Facebook tab button is clicked
 jq('._55ln').on('click', function() {  //Facebook sidebar person is clicked
   change_chat_tabs();
 })
-
-
-jq('._552m').on('input paste', function() {  // Text change in textbox. Mainly used to cover all bases
-  change_chat_tabs();
-});
-
 
 change_chat_tabs();
