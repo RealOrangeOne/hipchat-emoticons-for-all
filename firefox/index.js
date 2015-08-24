@@ -1,15 +1,22 @@
 var self = require('sdk/self');
 var pageMod = require("sdk/page-mod");
-var sites = require("data/site-decoder.json").sites;
+var sites = require("data/decoder.json").sites;
+
+patterns = []
 
 for (var i = 0; i < sites.length; i++) {
-    pattern = Object.keys(sites[i])[0];
-    script = sites[i][pattern];
-    content_scripts = ["./lib/jquery.js", "./image-lookup.js", "./injections/" + script];
-    console.log('pattern: ' + pattern);
-    console.log('content_scripts: ' + content_scripts);
-    pageMod.PageMod({
-      include: pattern,
-      contentScriptFile: content_scripts,
-    });
+    patterns.push(Object.keys(sites[i])[0])
 }
+pageMod.PageMod({
+  include: '*',
+  contentScriptFile: './../injector.js',
+  attachTo: 'top',
+  onAttach: function(worker) {
+    worker.port.emit('init');
+  },
+  contentScriptOptions: {
+    injectorURL: self.data.url('injections/'),
+    sites: require('data/decoder.json').sites,
+
+  }
+});

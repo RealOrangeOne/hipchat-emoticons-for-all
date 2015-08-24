@@ -21,7 +21,7 @@ for key, value in switcher.items():
     manifest[value] = project_package[key]
 
 
-with open(current_dir + "data/site-decoder.json") as json_file:
+with open(current_dir + "data/decoder.json") as json_file:
     site_decoder = json.load(json_file)['sites']
 
 
@@ -29,8 +29,8 @@ content_scripts = []
 for site in site_decoder:
     site = list(site.items())[0]
     temp = {}
-    temp['matches'] = [site[0]]
-    temp['js'] = ['data/lib/jquery.js', 'data/image_lookup.js', 'data/injections/' + site[1]]
+    temp['matches'] = ["*://" + site[0] + '/*']
+    temp['js'] = ['data/lib/jquery.js', 'data/image-decoder.js', 'data/injections/' + site[1]]
     content_scripts.append(temp)
 
 

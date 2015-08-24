@@ -3,11 +3,21 @@
     {
       "js": [
         "data/lib/jquery.js", 
-        "data/image_lookup.js", 
+        "data/image-decoder.js", 
         "data/injections/facebook.js"
       ], 
       "matches": [
-        "*.facebook.com"
+        "*://facebook.com/*"
+      ]
+    }, 
+    {
+      "js": [
+        "data/lib/jquery.js", 
+        "data/image-decoder.js", 
+        "data/injections/github.js"
+      ], 
+      "matches": [
+        "*://github.com/*"
       ]
     }
   ], 
