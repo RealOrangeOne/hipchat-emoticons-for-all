@@ -1,6 +1,6 @@
 {
   "author": "TheOrangeOne", 
-  "description": "Use hipchat emoticons on other sites", 
+  "description": "Use hipchat emoticons on other websites. Some sites may require this plugin in order to see the emoticons.", 
   "engines": {
     "fennec": ">=38.0a1", 
     "firefox": ">=38.0a1"

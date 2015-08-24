@@ -1,7 +1,7 @@
 {
   "name": "Hipchat-Emoticons-for-all",
   "version": "0.0.0",
-  "description": "Use hipchat emoticons on other sites",
+  "description": "Use hipchat emoticons on other websites. Some sites may require this plugin in order to see the emoticons.",
   "main": "src/index.js",
   "scripts": {
     "create-dirs": "mkdir -p firefox/data chrome/data build/injections build/lib",
