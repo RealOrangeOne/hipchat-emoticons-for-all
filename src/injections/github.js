@@ -11,7 +11,6 @@ function change_readme() {
 $("button.btn[name='comment_and_close']").prev().on('click', change_comments);
 
 $('.js-comment-container').on('load change', change_comments);
-});
 
 $('#readme').on('load change', change_readme);
 
