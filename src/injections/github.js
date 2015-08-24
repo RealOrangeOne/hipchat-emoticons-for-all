@@ -5,19 +5,15 @@ function change_comments() {
 
 function change_readme() {
   console.log("readme event");
-  inject_image('.comment-body');
+  inject_image('#readme');
 }
 
+$("button.btn[name='comment_and_close']").prev().on('click', change_comments);
 
-
-jq("button.btn[name='comment_and_close']").prev().on('click', function(){  // When the comment button is clicked
-  change_comments();
+$('.js-comment-container').on('load change', change_comments);
 });
 
-
-jq('.js-comment-container').on('load change', function(){  // when another comment comes in
-  change_comments();
-});
+$('#readme').on('load change', change_readme);
 
 
 change_comments();
