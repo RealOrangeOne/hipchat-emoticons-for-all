@@ -1,7 +1,8 @@
-var jq = jQuery.noConflict(true);
+
 
 function change_chat_tabs() {
   console.log("Event");
+  inject_image('._d97');
   jq('._d97').each(function(){
     for (var i = 0; i < image_decoder.length; i++) {
       console.log('Checking for ' + image_decoder[i][0])
@@ -40,4 +41,3 @@ jq('._552m').on('input paste', function() {  // Text change in textbox. Mainly u
 
 
 change_chat_tabs();
-alert("Facebook");
