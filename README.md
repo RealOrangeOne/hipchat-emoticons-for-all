@@ -15,6 +15,9 @@ Once installed into your browser, [Click here](https://github.com/RealOrangeOne/
 ## More Info ##
 More information can be found in the [Wiki](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki).
 
+## Adding Features ##
+If there is something you think could be done better, differently, or something new alltogether, read [This](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Adding-Features) to find out the best way to do it and how it's done. Any feature suggestion is appreciated!
+
 ## Disclaimer ##
 As you can tell, the quality of the code isnt perfect, or to a particular standard. Once the plugin works properly to a basic level, I will install some linting software to make the code look nicer, and hopefully run smoother too.
 
