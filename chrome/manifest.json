@@ -3,7 +3,7 @@
     {
       "js": [
         "data/lib/jquery.js", 
-        "data/image-decoder.js", 
+        "data/injector.js", 
         "data/injections/facebook.js"
       ], 
       "matches": [
@@ -13,7 +13,7 @@
     {
       "js": [
         "data/lib/jquery.js", 
-        "data/image-decoder.js", 
+        "data/injector.js", 
         "data/injections/github.js"
       ], 
       "matches": [
