@@ -3,10 +3,8 @@
 Cross-platform browser extension allowing use of hipchat emoticons on a variety of different websites. Using both client-side decoding, and markdown embedding.
 
 ## Download and Installation ##
-Download for Firefox: [Visit AMO]() __(Coming Soon)__
-
-
-Download for Chrome: [Visit Chrome app store]() __(Coming Soon)__
+* Download for Firefox: [Visit AMO]() __(Coming Soon)__
+* Download for Chrome: [Visit Chrome app store]() __(Coming Soon)__
 
 
 Alternatively, you can [Build it yourself](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Building-for-yourself) using these instructions!
