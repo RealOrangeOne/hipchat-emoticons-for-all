@@ -14,6 +14,20 @@ function inject_image(ident, classes) {
   });
 }
 
+function markdown_injector(ident) {
+  console.log("Modifying markdown of " + ident);
+  decoder = image_decoder.images;
+  for (var i = 0; i < decoder.length; i++) {
+    raw_key = Object.keys(decoder[i]);
+    image = decoder[i][raw_key];
+    key = "(" + raw_key + ")";
+    $(ident).text($(ident).text().replace(key,
+      "![" + raw_key + "](" + image + ")"
+    ));
+  }
+}
+
+
 console.log("Injection");
 
 var image_decoder = %image_decoder%
