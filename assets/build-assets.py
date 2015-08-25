@@ -5,17 +5,18 @@ ASSETS_URL="https://raw.githubusercontent.com/RealOrangeOne/hipchat-emoticons-fo
 
 
 def get_icon_name(path):
-    return get_filename(path).replace('.png', '')
+    return get_filename(path).replace('.png', '').replace('.gif', '')
 
 def get_filename(path):
     return path.replace('assets/', '')
 
 
-files = glob('assets/*.png')
+files = glob('assets/*.png', 'assets/*.gif')
 images = []
 
 for filename in files:
     images.append({get_icon_name(filename): ASSETS_URL + get_filename(filename)})
+
 
 image_decoder = {"images":images}
 
