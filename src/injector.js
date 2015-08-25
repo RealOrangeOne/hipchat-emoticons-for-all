@@ -7,7 +7,7 @@ function inject_image(ident, classes) {
       image = decoder[i][key];
       key = "(" + key + ")";
       $(this).html($(this).html().replace(key,
-        "<img class='" + classes + "' style='height: 30px; width: 30px;' src='" + image + "'/>"
+        "<img class='" + classes + "' style='height: 30px; width: auto;' src='" + image + "'/>"
       ));
     }
   });
