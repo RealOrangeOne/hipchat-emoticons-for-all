@@ -13,8 +13,8 @@
     "test": "npm run build-assets && npm run build-js && npm run distribute && npm run test-firefox",
     "build-js": "bash build-js.sh",
     "develop": "npm run build-assets && npm run build-js && npm run distribute ",
-    "build-assets": "python assets/build-assets.py",
-    "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
+    "build-assets": "python3 assets/build-assets.py",
+    "build-data-files": "python3 firefox/build-package.py && python3 chrome/build-manifest.py",
     "distribute": "rm -rf firefox/data/* chrome/data/* && cp -rf build/* firefox/data/ && cp -rf build/* chrome/data/",
     "build": "npm run create-dirs && npm run build-assets && npm run build-js && npm run distribute && npm run build-data-files",
     "clean": "rm -rf firefox/data chrome/data node_modules/ build/"
