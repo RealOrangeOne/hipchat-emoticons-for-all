@@ -21,12 +21,11 @@ function markdown_injector(ident) {
     raw_key = Object.keys(decoder[i]);
     image = decoder[i][raw_key];
     key = "(" + raw_key + ")";
-    $(ident).text($(ident).text().replace(key,
+    $(ident).val($(ident).val().replace(key,
       "![" + raw_key + "](" + image + ")"
     ));
   }
 }
-
 
 console.log("Injection");
 

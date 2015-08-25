@@ -11,6 +11,7 @@
     "test-firefox": "cd firefox/ && jpm run -b /usr/bin/firefox && cd -",
     "test": "npm run build-assets && npm run build-js && npm run distribute && npm run test-firefox",
     "build-js": "bash build-js.sh",
+    "develop": "npm run build-assets && npm run build-js && npm run distribute ",
     "build-assets": "python assets/build-assets.py",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",
     "distribute": "rm -rf firefox/data/* chrome/data/* && cp -rf build/* firefox/data/ && cp -rf build/* chrome/data/",
@@ -19,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all"
+    "url": "https://github.com/realorangeone/hipchat-emoticons-for-all"
   },
   "keywords": [
     "hipchat",
@@ -28,9 +29,9 @@
   "author": "TheOrangeOne",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all/issues"
+    "url": "https://github.com/realorangeone/hipchat-emoticons-for-all/issues"
   },
-  "homepage": "https://bitbucket.org/theorangeone/hipchat-emoticons-for-all",
+  "homepage": "https://github.com/realorangeone/hipchat-emoticons-for-all",
   "dependencies": {
     "ionic-sdk": "=1.0.0",
     "jpm":"=1.0.1",

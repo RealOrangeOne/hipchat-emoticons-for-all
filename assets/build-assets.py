@@ -1,26 +1,31 @@
 import json
 from glob import glob
 
+ASSETS_URL="https://raw.githubusercontent.com/RealOrangeOne/hipchat-emoticons-for-all/master/assets/"
+
+
+def get_icon_name(path):
+    return get_filename(path).replace('.png', '')
+
 def get_filename(path):
-    return path.replace('assets/', "").replace('.png', '')
+    return path.replace('assets/', '')
 
 
 files = glob('assets/*.png')
-image_bin = []
+images = []
 
 for filename in files:
-    with open(filename, 'rb') as file:
-        image_bin.append({ get_filename(filename):
-            "data:image/png;base64," + (open(filename, 'rb').read().encode('base64').replace('\n', ''))
-        })
+    images.append({get_icon_name(filename): ASSETS_URL + get_filename(filename)})
 
-image_decoder = {"images":image_bin}
+image_decoder = {"images":images}
 
 image_decoder_json = json.dumps(image_decoder, indent=2, sort_keys=True)
 
 js_file = None
 with open('src/image-decoder.js', "r") as file:
     js_file = file.read()
+
 js_file = js_file.replace("%image_decoder%", image_decoder_json)
+
 with open('build/image-decoder.js', 'w') as file:
     file.write(js_file)
