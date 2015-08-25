@@ -4,11 +4,15 @@ Cross-platform browser extension allowing use of hipchat emoticons on a variety 
 
 ## Download and Installation ##
 Download for Firefox: [Visit AMO]() __(Coming Soon)__
+
+
 Download for Chrome: [Visit Chrome app store]() __(Coming Soon)__
 
-Alternatively, you can [Build it yourself](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Building-for-yourself)!
+
+Alternatively, you can [Build it yourself](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Building-for-yourself) using these instructions!
 
 Once installed into your browser, [Click here](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Test-the-plugin-works-correctly) to make sure it's working perfectly!
+
 
 ## More Info ##
 More information can be found in the [Wiki](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki).
