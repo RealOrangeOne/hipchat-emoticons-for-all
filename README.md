@@ -18,4 +18,4 @@ As you can tell, the quality of the code isnt perfect, or to a particular standa
 All the time the app has a version of `0.0.0`, the extensions are considered to be unstable and unlikely to work properly if at all.
 
 ## More Info ##
-More information can be found in the [Wiki](wiki/)
+More information can be found in the [Wiki](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki)
