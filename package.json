@@ -9,6 +9,7 @@
     "build-firefox": "cd firefox/ && jpm xpi && cd -",
     "build-chrome": "crx pack chrome -o chrome/hipchat-emoticons-for-all.crx -p chrome/key.pem",
     "test-firefox": "cd firefox/ && jpm run -b /usr/bin/firefox && cd -",
+    "test": "npm run build-assets && npm run build-js && npm run distribute && npm run test-firefox",
     "build-js": "bash build-js.sh",
     "build-assets": "python assets/build-assets.py",
     "build-data-files": "python firefox/build-package.py && python chrome/build-manifest.py",

@@ -1,5 +1,4 @@
-import json, os
-from base64 import b64encode
+import json
 from glob import glob
 
 def get_filename(path):
@@ -11,9 +10,11 @@ image_bin = []
 
 for filename in files:
     with open(filename, 'rb') as file:
-        image_bin.append({ get_filename(filename): "data:image/png;base64,"+ (str(b64encode(file.read()))[2:-1])})
-    
-image_decoder = {"sites":image_bin}
+        image_bin.append({ get_filename(filename):
+            "data:image/png;base64," + (open(filename, 'rb').read().encode('base64').replace('\n', ''))
+        })
+
+image_decoder = {"images":image_bin}
 
 image_decoder_json = json.dumps(image_decoder, indent=2, sort_keys=True)
 

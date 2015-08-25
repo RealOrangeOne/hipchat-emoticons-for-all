@@ -1,10 +1,8 @@
 function change_comments() {
-  console.log("comment event");
   inject_image('.comment-body');
 }
 
 function change_readme() {
-  console.log("readme event");
   inject_image('#readme');
 }
 

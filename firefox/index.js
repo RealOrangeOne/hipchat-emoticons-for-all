@@ -9,6 +9,6 @@ for (var i = 0; i < sites.length; i++) {
     pageMod.PageMod({
       include: site,
       contentScriptFile: './injections/' + script,
-      attachTo: ['top', 'existing', 'iframe'],
+      attachTo: ['top', 'existing', 'frame'],
     });
 }
