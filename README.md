@@ -10,6 +10,9 @@ Whilst I recommend that you use the plugins that are on the add-on stores of the
     npm run build-firefox
     npm run build-extensions (firefox and chrome)
 
+### Modification ###
+If you want to modify the code in any way, you must run `npm run develop`. This build all the code, but doesnt delete any files you may have modified as `npm run build` does.
+
 ## Disclaimer: ##
 As you can tell, the quality of the code isnt perfect, or to a particular standard. Once the plugin works properly to a basic level, I will install some linting software to make the code look nicer, and possibly run smoother too.
 
