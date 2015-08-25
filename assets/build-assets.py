@@ -11,7 +11,7 @@ def get_filename(path):
     return path.replace('assets/', '')
 
 
-files = glob('assets/*.png', 'assets/*.gif')
+files = glob('assets/*.png') + glob('assets/*.gif')
 images = []
 
 for filename in files:
