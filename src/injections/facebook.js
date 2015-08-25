@@ -1,5 +1,4 @@
 function change_chat_tabs() {
-  console.log("Event");
   inject_image('._d97', 'emoticon');
 }
 

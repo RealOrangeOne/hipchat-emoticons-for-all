@@ -1,5 +1,4 @@
 function inject_image(ident, classes) {
-  console.log("Injecting Images in to " + ident);
   classes = classes || "";
   $(ident).each(function() {
     decoder = image_decoder.images;
@@ -15,7 +14,6 @@ function inject_image(ident, classes) {
 }
 
 function markdown_injector(ident) {
-  console.log("Modifying markdown of " + ident);
   decoder = image_decoder.images;
   for (var i = 0; i < decoder.length; i++) {
     raw_key = Object.keys(decoder[i]);
@@ -27,6 +25,6 @@ function markdown_injector(ident) {
   }
 }
 
-console.log("Injection");
+console.log("Hipchat-emoticons-for-all is enabled.");
 
 var image_decoder = %image_decoder%
