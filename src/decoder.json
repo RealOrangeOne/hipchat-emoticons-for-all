@@ -1,6 +1,7 @@
 {
     "sites": [
         {"facebook.com":"facebook.js"},
-        {"github.com":"github.js"}
+        {"github.com":"github.js"},
+        {"trello.com":"trello.js"}
     ]
 }
