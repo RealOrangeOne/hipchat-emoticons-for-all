@@ -2,10 +2,14 @@
 chrome/key.pem
 chrome/data
 chrome/*.crx
+chrome/manifest.json
+
 
 # Firefox extension files
 firefox/data
 firefox/*.xpi
+firefox/package.json
+
 
 # Source
 build/

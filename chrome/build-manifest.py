@@ -5,10 +5,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__)) + "/"
 with open(current_dir + "../package.json") as json_file:
     project_package = json.load(json_file)
 
-
-with open(current_dir + "manifest.json") as json_file:
-    manifest = json.load(json_file)
-
+manifest = {}
+try:
+    with open(current_dir + "manifest.json") as json_file:
+        manifest = json.load(json_file)
+except:
+    manifest = {}
 
 switcher = {
     'name': 'name',
@@ -36,6 +38,8 @@ for site in site_decoder:
 
 manifest['content_scripts'] = content_scripts
 
+# Hard coded things
+manifest['mannifest_version'] = 2
 
 with open(current_dir + 'manifest.json', 'w') as file:
     json.dump(manifest, file, indent=2, sort_keys=True)

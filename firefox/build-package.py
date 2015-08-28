@@ -5,8 +5,12 @@ current_dir = os.path.dirname(os.path.realpath(__file__)) + "/"
 with open(current_dir + "../package.json") as json_file:
     project_package = json.load(json_file)
 
-with open(current_dir + "package.json") as json_file:
-    ext_package = json.load(json_file)
+package = {}
+try:
+    with open(current_dir + "package.json") as json_file:
+        package = json.load(json_file)
+except:
+    package = {}
 
 switcher = {
     'name': 'title',
@@ -17,7 +21,14 @@ switcher = {
 }
 
 for key, value in switcher.items():
-    ext_package[value] = project_package[key]
+    package[value] = project_package[key]
+
+
+#Hard coded values
+package['name'] = package['title'].replace(' ', '-')
+package['id'] = package['name'] + "@jetpack"
+package['engines'] = {'fennec': ">=38.01a", 'firefox': ">=38.0a1"}
+package['main'] = 'index.js'
 
 with open(current_dir + 'package.json', 'w') as file:
-    json.dump(ext_package, file, indent=2, sort_keys=True)
+    json.dump(package, file, indent=2, sort_keys=True)
