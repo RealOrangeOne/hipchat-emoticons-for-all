@@ -1,4 +1,4 @@
-function inject_image(ident, classes) {
+function insert_emoticons(ident, classes) {
   classes = classes || "";
   $(ident).each(function() {
     decoder = image_decoder.images;
@@ -13,7 +13,7 @@ function inject_image(ident, classes) {
   });
 }
 
-function markdown_injector(ident) {
+function markdown_decoder(ident) {
   decoder = image_decoder.images;
   for (var i = 0; i < decoder.length; i++) {
     raw_key = Object.keys(decoder[i]);

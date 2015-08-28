@@ -1,13 +1,13 @@
 function change_comments() {
-  inject_image('.comment-body');
+  insert_emoticons('.comment-body');
 }
 
 function change_readme() {
-  inject_image('#readme');
+  insert_emoticons('#readme');
 }
 
 function change_wiki() {
-    inject_image('#wiki-body');
+  insert_emoticons('#wiki-body');
 }
 
 $('.js-comment-container').on('load change', change_comments);
@@ -15,11 +15,11 @@ $('.js-comment-container').on('load change', change_comments);
 $('#readme').on('load change', change_readme);
 
 $('form .timeline-comment textarea[placeholder="Leave a comment"]').on('change input', function() {
-    markdown_injector('form .timeline-comment textarea[placeholder="Leave a comment"]');
+    markdown_decoder('form .timeline-comment textarea[placeholder="Leave a comment"]');
 });
 
 $(document).on('ready', function() {
-    change_comments();
-    change_readme();
-    change_wiki();
+  change_comments();
+  change_readme();
+  change_wiki();
 });

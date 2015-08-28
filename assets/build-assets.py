@@ -28,5 +28,5 @@ with open('src/injector.js', "r") as file:
 
 js_file = js_file.replace("%image_decoder%", image_decoder_json)
 
-with open('build/injector.js', 'w') as file:
+with open('build/global.js', 'w') as file:
     file.write(js_file)

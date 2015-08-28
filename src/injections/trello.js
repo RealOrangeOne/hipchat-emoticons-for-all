@@ -1,15 +1,15 @@
 function change_card_title() {
-    inject_image('.list-card-title');
-    inject_image('.window-title-text');
+    insert_emoticons('.list-card-title');
+    insert_emoticons('.window-title-text');
 }
 
 function change_list_title() {
-    inject_image('.list-header-name');
-    inject_image('.window-header-inline-content');
+    insert_emoticons('.list-header-name');
+    insert_emoticons('.window-header-inline-content');
 }
 
 function change_comment() {
-    inject_image('.action-comment');
+    insert_emoticons('.action-comment');
 }
 
 $('.list-header-name').on('change load', function() {
@@ -23,7 +23,7 @@ $('.active-card').on('click', function() {
 });
 
 $('.card-detail-edit textarea').on('change input', function() {
-    markdown_injector('.card-detail-edit textarea');
+    markdown_decoder('.card-detail-edit textarea');
 });
 
 $('.phenom-action').on('DOMNodeInserted DOMNodeRemoved change load', function() {

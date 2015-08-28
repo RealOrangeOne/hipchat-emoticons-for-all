@@ -32,7 +32,7 @@ for site in site_decoder:
     site = list(site.items())[0]
     temp = {}
     temp['matches'] = ["*://" + site[0] + '/*']
-    temp['js'] = ['data/lib/jquery.js', 'data/injector.js', 'data/injections/' + site[1]]
+    temp['js'] = ['data/injections/' + site[1]]
     content_scripts.append(temp)
 
 
