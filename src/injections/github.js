@@ -7,6 +7,7 @@ function change_readme() {
 }
 
 function change_wiki() {
+  console.log("Changing wiki");
   insert_emoticons('#wiki-body');
 }
 
@@ -18,8 +19,11 @@ $('form .timeline-comment textarea[placeholder="Leave a comment"]').on('change i
     markdown_decoder('form .timeline-comment textarea[placeholder="Leave a comment"]');
 });
 
+$('#wiki-body').on('load change', change_wiki);
+
 $(document).on('ready', function() {
+  console.log("Ready");
   change_comments();
   change_readme();
-  change_wiki();
 });
+console.log('Github');

@@ -23,7 +23,7 @@ image_decoder = {"images":images}
 image_decoder_json = json.dumps(image_decoder, indent=2, sort_keys=True)
 
 js_file = None
-with open('src/injector.js', "r") as file:
+with open('src/global.js', "r") as file:
     js_file = file.read()
 
 js_file = js_file.replace("%image_decoder%", image_decoder_json)

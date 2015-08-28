@@ -1,7 +1,8 @@
 function insert_emoticons(ident, classes) {
   classes = classes || "";
+  decoder = image_decoder.images;
+  console.log("Replacing " + $(ident).length + " of " + ident);
   $(ident).each(function() {
-    decoder = image_decoder.images;
     for (var i = 0; i < decoder.length; i++) {
       key = Object.keys(decoder[i]);
       image = decoder[i][key];
@@ -11,6 +12,7 @@ function insert_emoticons(ident, classes) {
       ));
     }
   });
+  console.log("Swapped " + ident);
 }
 
 function markdown_decoder(ident) {
@@ -25,6 +27,6 @@ function markdown_decoder(ident) {
   }
 }
 
-console.log("Hipchat-emoticons-for-all is enabled.");
+console.log("Hipchat-emoticons-for-all is enabled on " + location.href);
 
 var image_decoder = %image_decoder%
