@@ -25,7 +25,7 @@ for key, value in switcher.items():
 
 
 #Hard coded values
-package['name'] = package['title'].replace(' ', '-')
+package['name'] = package['title'].replace(' ', '-').lower()
 package['id'] = package['name'] + "@jetpack"
 package['engines'] = {'fennec': ">=38.01a", 'firefox': ">=38.0a1"}
 package['main'] = 'index.js'
