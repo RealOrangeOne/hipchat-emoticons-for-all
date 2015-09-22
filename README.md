@@ -23,3 +23,5 @@ As you can tell, the quality of the code isnt perfect, or to a particular standa
 
 All the time the app has a version of `0.0.0`, the extensions are considered to be unstable and unlikely to work properly, if at all.
 
+## Example ##
+The sytax used is identical to what is used in the hipchat applications: wrapping the identifier in brackets `()`. For example, (yey) (allthethings) .
