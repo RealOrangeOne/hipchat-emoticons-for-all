@@ -1,7 +1,7 @@
 function insert_emoticons(ident, classes) {
   classes = classes || "";
   decoder = image_decoder.images;
-  console.log("Replacing " + $(ident).length + " of " + ident);
+  console.log("Replacing " + $(ident).length + " instances of " + ident);
   $(ident).each(function() {
     for (var i = 0; i < decoder.length; i++) {
       key = Object.keys(decoder[i]);
