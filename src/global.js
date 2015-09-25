@@ -7,9 +7,13 @@ function insert_emoticons(ident, classes) {
       key = Object.keys(decoder[i]);
       image = decoder[i][key];
       key = "(" + key + ")";
-      $(this).html($(this).html().replace(key,
-        "<img class='" + classes + "' style='height: 28px; width: auto;' src='" + image + "'/>"
-      ));
+      $(this).html(
+        replaceAll(
+          $(this).html(),
+          key,
+          "<img class='" + classes + "' style='height: 28px; width: auto;' src='" + image + "'/>"
+        );
+      );
     }
   });
   console.log("Swapped " + ident);
@@ -21,10 +25,22 @@ function markdown_decoder(ident) {
     raw_key = Object.keys(decoder[i]);
     image = decoder[i][raw_key];
     key = "(" + raw_key + ")";
-    $(ident).val($(ident).val().replace(key,
-      "![" + raw_key + "](" + image + ")"
-    ));
+    $(ident).val(
+      replaceAll(
+        $(ident).val(),
+        key,
+        "![" + raw_key + "](" + image + ")"
+      );
+    );
   }
+}
+
+function escapeRegExp(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+function replaceAll(string, find, replace) {
+  return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
 }
 
 console.log("Hipchat-emoticons-for-all is enabled on " + location.href);
