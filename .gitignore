@@ -15,6 +15,3 @@ firefox/package.json
 build/
 node_modules/
 npm-debug.log
-
-# Virtualenv
-env/
