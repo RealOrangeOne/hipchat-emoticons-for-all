@@ -12,7 +12,7 @@ function insert_emoticons(ident, classes) {
           $(this).html(),
           key,
           "<img class='" + classes + "' style='height: 28px; width: auto;' src='" + image + "'/>"
-        );
+        )
       );
     }
   });
@@ -30,7 +30,7 @@ function markdown_decoder(ident) {
         $(ident).val(),
         key,
         "![" + raw_key + "](" + image + ")"
-      );
+      )
     );
   }
 }
