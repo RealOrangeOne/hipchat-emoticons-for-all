@@ -8,7 +8,7 @@ function insert_emoticons(ident, classes) {
       image = decoder[i][key];
       key = "(" + key + ")";
       $(this).html($(this).html().replace(key,
-        "<img class='" + classes + "' style='height: 30px; width: auto;' src='" + image + "'/>"
+        "<img class='" + classes + "' style='height: 28px; width: auto;' src='" + image + "'/>"
       ));
     }
   });

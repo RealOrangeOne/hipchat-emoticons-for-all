@@ -8,7 +8,7 @@ function change_readme() {
 
 function change_wiki() {
   console.log("Changing wiki");
-  insert_emoticons('#markdown-body');
+  insert_emoticons('#wiki-body');
 }
 
 function change_commits() {
@@ -25,9 +25,23 @@ $('form .timeline-comment textarea[placeholder="Leave a comment"]').on('change i
     markdown_decoder('form .timeline-comment textarea[placeholder="Leave a comment"]');
 });
 
-$('#markdown-body').on('DOMNodeInserted DOMNodeRemoved change load', change_wiki);
+$('#wiki-body').on('load change', change_wiki);
 
-$('table.timeline-commits').on('change load', change_commits);
+$('table.timeline-commits').on('load chang', change_commits);
+
+$('a.wiki-page-link').on('click', function() {
+    change_comments();
+    change_commits();
+    change_readme();
+    change_wiki();
+});
+
+$('a.sunken-menu-item').on('click', function() {
+    change_comments();
+    change_commits();
+    change_readme();
+    change_wiki();
+});
 
 $(document).on('ready', function() {
   console.log("Ready");
