@@ -14,4 +14,9 @@ firefox/package.json
 # Source
 build/
 node_modules/
+assets/*.png
+assets/*.gif
 npm-debug.log
+
+# VirtualEnv
+env/
