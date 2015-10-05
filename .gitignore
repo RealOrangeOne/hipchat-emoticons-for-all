@@ -18,6 +18,4 @@ node_modules/
 assets/*.png
 assets/*.gif
 npm-debug.log
-
-# VirtualEnv
 env/
