@@ -12,21 +12,18 @@
     "test-firefox": "cd firefox/ && jpm run -b /usr/bin/firefox && cd -",
     "test": "npm run develop && npm run test-firefox",
     "build-js": "bash build-js.sh",
-    "develop": "npm run build-js && npm run distribute ",
+    "develop": "npm run lint && npm run build-js && npm run distribute",
     "build-assets": "env/bin/python3 assets/build-assets.py",
     "build-data-files": "env/bin/python3 firefox/build-package.py && env/bin/python3 chrome/build-manifest.py",
     "distribute": "rm -rf firefox/data/* chrome/data/* && cp -rf build/* firefox/data/ && cp -rf build/* chrome/data/",
-    "build": "npm run create-dirs && npm run build-assets && npm run build-js && npm run distribute && npm run build-data-files",
+    "build": "npm run create-dirs && npm run build-assets && npm run develop && npm run build-data-files",
+    "lint":"eslint -c node_modules/eslint-config/.eslintrc 'src/injections/' 'src/global.js'",
     "clean": "rm -rf firefox/data chrome/data node_modules/ build/ env/"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/realorangeone/hipchat-emoticons-for-all"
   },
-  "keywords": [
-    "hipchat",
-    "emoticons"
-  ],
   "author": "TheOrangeOne",
   "license": "MIT",
   "bugs": {
@@ -35,10 +32,15 @@
   "homepage": "https://github.com/realorangeone/hipchat-emoticons-for-all",
   "dependencies": {
     "ionic-sdk": "=1.0.0",
-    "jpm":"=1.0.1",
-    "uglify-js":"=2.4.24",
-    "crx": "=3.0.3",
-    "less": "=2.4.0",
     "jquery": "=2.1.4"
+  },
+  "devDependencies": {
+    "eslint-config": "git://github.com/dabapps/eslint-config.git#1.1.1",
+    "eslint": "=1.5.1",
+    "eslint-plugin-react": "=3.5.0",
+    "less": "=2.4.0",
+    "crx": "=3.0.3",
+    "jpm":"=1.0.1",
+    "uglify-js":"=2.4.24"
   }
 }
