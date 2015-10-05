@@ -5,12 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "create-dirs": "mkdir -p firefox/data chrome/data build/injections build/lib",
-    "test-extension": "bash scripts/test-extension.sh",
+    "run": "bash scripts/test-extension.sh",
     "build-js": "bash scripts/build-js.sh",
-    "develop": "npm run lint && npm run build-js && bash scripts/distribute.sh",
+    "develop": "npm run build-js && bash scripts/distribute.sh",
     "build-assets": "env/bin/python3 assets/build-assets.py",
     "build-data-files": "bash scripts/data-files.sh",
     "build": "npm run create-dirs && npm run build-assets && npm run develop && npm run build-data-files",
+    "test":"npm run lint",
     "lint":"eslint -c node_modules/eslint-config/.eslintrc 'src/injections/' 'src/global.js'",
     "clean": "rm -rf firefox/data chrome/data node_modules/ build/ env/"
   },
