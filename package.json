@@ -31,16 +31,16 @@
   },
   "homepage": "https://github.com/realorangeone/hipchat-emoticons-for-all",
   "dependencies": {
-    "ionic-sdk": "=1.0.0",
-    "jquery": "=2.1.4"
+    "ionic-sdk": "^1.0.0",
+    "jquery": "^2.1.4"
   },
   "devDependencies": {
-    "eslint-config": "git://github.com/dabapps/eslint-config.git#1.1.1",
-    "eslint": "=1.5.1",
-    "eslint-plugin-react": "=3.5.0",
-    "less": "=2.4.0",
-    "crx": "=3.0.3",
-    "jpm":"=1.0.1",
-    "uglify-js":"=2.4.24"
+    "eslint-config": "git://github.com/dabapps/eslint-config.git",
+    "eslint": "^1.5.1",
+    "eslint-plugin-react": "^3.5.0",
+    "less": "^2.4.0",
+    "crx": "^3.0.3",
+    "jpm":"^1.0.1",
+    "uglify-js":"^2.4.24"
   }
 }
