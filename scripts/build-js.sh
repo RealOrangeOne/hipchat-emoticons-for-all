@@ -10,3 +10,4 @@ for f in src/injections/*; do uglifyjs "build/global.js" "src/lib/jquery.js" $f 
 
 cp -rp build/src/* build/
 rm -rf build/src
+rm -rf build/lib

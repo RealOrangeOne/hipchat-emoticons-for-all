@@ -27,7 +27,7 @@ for key, value in switcher.items():
 #Hard coded values
 package['name'] = package['title'].replace(' ', '-').lower()
 package['id'] = package['name'] + "@jetpack"
-package['engines'] = {'fennec': ">=38.01a", 'firefox': ">=38.0a1"}
+package['engines'] = {'fennec': "45.0", 'firefox': "45.0"}
 package['main'] = 'index.js'
 
 with open(current_dir + 'package.json', 'w') as file:
