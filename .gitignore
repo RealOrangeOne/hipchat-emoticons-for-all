@@ -3,6 +3,7 @@ chrome/key.pem
 chrome/data
 chrome/*.crx
 chrome/manifest.json
+chrome/release.zip
 
 
 # Firefox extension files

@@ -6,6 +6,7 @@
   "scripts": {
     "create-dirs": "mkdir -p firefox/data chrome/data build/injections build/lib",
     "run": "bash scripts/test-extension.sh",
+    "release": "bash scripts/release.sh",
     "build-js": "bash scripts/build-js.sh",
     "develop": "npm run build-js && bash scripts/distribute.sh",
     "build-assets": "env/bin/python3 assets/build-assets.py",
