@@ -16,7 +16,7 @@ Once installed into your browser, [Click here](https://github.com/RealOrangeOne/
 More information can be found in the [Wiki](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki).
 
 ## Adding Features ##
-If there is something you think could be done better, differently, or something new alltogether, read [This](https://github.com/RealOrangeOne/hipchat-emoticons-for-all/wiki/Adding-Features) to find out the best way to do it and how it's done. Any feature suggestion is appreciated!
+Think you've found a bug, something not working properly, or got a new feature to add? Create a Pull Request with your upated code, and i'll take a look. As long as it's passing all it's tests, and the code works when manually tested, it'll be merged. Any feature suggestion is appreciated!
 
 ## Disclaimer ##
 All the time the app has a version of `0.0.0`, the extensions are considered to be unstable and unlikely to work properly, if at all.
