@@ -7,4 +7,3 @@ export PATH=env/bin:${PATH}
 flake8 . --ignore=E128,E501 --exclude="node_modules,env"
 
 npm test
-

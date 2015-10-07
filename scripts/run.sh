@@ -2,7 +2,6 @@
 
 set -e
 
-npm run lint
 bash scripts/build-js.sh
 bash scripts/distribute.sh
 

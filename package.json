@@ -12,8 +12,9 @@
     "build-assets": "env/bin/python3 assets/build-emoticons.py",
     "build-data-files": "bash scripts/data-files.sh",
     "build": "npm run create-dirs && npm run build-assets && npm run develop && npm run build-data-files",
-    "test":"npm run lint",
+    "test":"npm run lint && npm run lint-json",
     "lint":"eslint -c node_modules/eslint-config/.eslintrc 'src/injections/' 'src/global.js'",
+    "lint-json": "jsonlint -q src/decoder.json",
     "clean": "rm -rf firefox/data chrome/data node_modules/ build/ env/"
   },
   "repository": {
@@ -37,6 +38,7 @@
     "less": "^2.4.0",
     "crx": "^3.0.3",
     "jpm":"^1.0.1",
-    "uglify-js":"^2.4.24"
+    "uglify-js":"^2.4.24",
+    "jsonlint": "^1.6.2"
   }
 }
