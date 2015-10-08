@@ -22,4 +22,4 @@ Think you've found a bug, something not working properly, or got a new feature t
 All the time the app has a version of `0.0.0`, the extensions are considered to be unstable and unlikely to work properly, if at all.
 
 ## Example ##
-The sytax used is identical to what is used in the hipchat applications: wrapping the identifier in brackets `()`. For example, (yey) (allthethings) (boom) .
+The syntax used is identical to what is used in the hipchat applications: wrapping the identifier in brackets `()`. For example, (yey) (allthethings) (boom) .
