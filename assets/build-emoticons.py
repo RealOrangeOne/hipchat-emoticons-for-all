@@ -1,4 +1,4 @@
-import json, requests, os, base64
+import json, requests, os, base64, printr
 from glob import glob
 from lxml import html
 from collections import namedtuple
@@ -28,6 +28,7 @@ for i in range(len(emoticon_names) - 1):
 
 print("Downloading offline emoticons...")
 DOWNLOAD_FILES = []
+printer = printr.ItterPrintr('{c}/{m} Files Downloaded', len(emoticons), 1)
 for emoticon in emoticons:
     ext = 'gif' if emoticon.url.endswith('gif') else 'png'
     path = ASSET_DIR + "/{0}.{1}".format(emoticon.ident, ext)
@@ -42,9 +43,9 @@ for emoticon in emoticons:
 
         for block in response.iter_content(1024):
             handle.write(block)
-
-    print("{}/{} Files Downloaded\r".format(len(DOWNLOAD_FILES), len(emoticons)), end='' if len(DOWNLOAD_FILES) != len(emoticons) else '\n')
-
+    printer.update()
+    # print("{}/{} Files Downloaded\r".format(len(DOWNLOAD_FILES), len(emoticons)), end='' if len(DOWNLOAD_FILES) != len(emoticons) else '\n')
+print()
 for filename in LOCAL_FILES:
     emoticons.append(Emoticon(get_icon_name(filename), filename))
 
