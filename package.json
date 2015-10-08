@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "create-dirs": "mkdir -p firefox/data chrome/data build/injections build/lib",
-    "run": "bash scripts/test-extension.sh",
+    "run": "bash scripts/run.sh",
     "release": "bash scripts/release.sh",
     "build-js": "bash scripts/build-js.sh",
     "develop": "npm run build-js && bash scripts/distribute.sh",
