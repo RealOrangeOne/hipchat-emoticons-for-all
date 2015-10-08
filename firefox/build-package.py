@@ -24,7 +24,7 @@ for key, value in switcher.items():
     package[value] = project_package[key]
 
 
-#Hard coded values
+# Hard coded values
 package['name'] = package['title'].replace(' ', '-').lower()
 package['id'] = package['name'] + "@jetpack"
 package['engines'] = {'fennec': "45.0", 'firefox': "45.0"}

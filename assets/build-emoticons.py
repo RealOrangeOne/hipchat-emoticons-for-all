@@ -3,12 +3,15 @@ from glob import glob
 from lxml import html
 from collections import namedtuple
 
+
 ASSET_DIR = os.path.dirname(os.path.realpath(__file__))
 LOCAL_FILES = glob('assets/*.png') + glob('assets/*.gif')
-
 Emoticon = namedtuple('Emoticon', ['ident', 'url'])
+
+
 def get_filename(path):
     return path.replace('assets/', '')
+
 
 def get_icon_name(path):
     return get_filename(path).replace('.png', '').replace('.gif', '')
@@ -20,7 +23,7 @@ emoticon_paths = html_tree.xpath("//div[@class='emoticon-block']/img/@src")
 emoticon_names = html_tree.xpath("//div[@class='emoticon-block']/div/text()")
 
 emoticons = []
-for i in range(len(emoticon_names)-1):
+for i in range(len(emoticon_names) - 1):
     emoticons.append(Emoticon(emoticon_names[i][1:-1], emoticon_paths[i]))
 
 print("Downloading offline emoticons...")
@@ -40,7 +43,7 @@ for emoticon in emoticons:
         for block in response.iter_content(1024):
             handle.write(block)
 
-    print ("{}/{} Files Downloaded\r".format(len(DOWNLOAD_FILES), len(emoticons)), end='' if len(DOWNLOAD_FILES) != len(emoticons) else '\n')
+    print("{}/{} Files Downloaded\r".format(len(DOWNLOAD_FILES), len(emoticons)), end='' if len(DOWNLOAD_FILES) != len(emoticons) else '\n')
 
 for filename in LOCAL_FILES:
     emoticons.append(Emoticon(get_icon_name(filename), filename))
@@ -55,7 +58,7 @@ for emoticon in emoticons:
     images.append({emoticon.ident: data})
 
 print("Exporting JSON...")
-image_decoder = {"images":images}
+image_decoder = {"images": images}
 
 image_decoder_json = json.dumps(image_decoder, indent=2, sort_keys=True)
 
